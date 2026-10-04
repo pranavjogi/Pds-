@@ -1,0 +1,54 @@
+import pandas as pd
+
+df = pd.DataFrame({
+    "Name": ["Pranav", "Rahul", "Amit", "Neha", "Priya"],
+    "Department": ["CE", "IT", "CE", "IT", "CE"],
+    "Marks": [85, 72, 90, 68, 78],
+    "Age": [20, 21, 20, 19, 21]
+})
+
+print("----- ORIGINAL DATA -----")
+print(df)
+
+print("\n----- SLICING -----")
+print(df.iloc[0:3])
+print(df.iloc[0:3, 0:3])
+
+print("\n----- FILTERING -----")
+print(df[df["Marks"] > 75])
+print(df[df["Department"] == "CE"])
+
+print("\n----- SORTING -----")
+print(df.sort_values("Marks"))
+print(df.sort_values("Marks", ascending=False))
+
+print("\n----- CONCATENATING -----")
+
+df2 = pd.DataFrame({
+    "Name": ["Karan", "Riya"],
+    "Department": ["IT", "CE"],
+    "Marks": [82, 88],
+    "Age": [20, 19]
+})
+
+combined = pd.concat([df, df2], ignore_index=True)
+print(combined)
+
+print("\n----- AGGREGATION -----")
+print("Total Marks:", df["Marks"].sum())
+print("Average Marks:", df["Marks"].mean())
+print("Maximum Marks:", df["Marks"].max())
+print("Minimum Marks:", df["Marks"].min())
+print("Number of Students:", df["Name"].count())
+
+print("\nDepartment-wise Aggregation:")
+print(df.groupby("Department")["Marks"].agg(["sum", "mean", "max", "min"]))
+
+print("\n----- NORMALIZATION -----")
+
+df["Normalized_Marks"] = (
+    (df["Marks"] - df["Marks"].min()) /
+    (df["Marks"].max() - df["Marks"].min())
+)
+
+print(df)
