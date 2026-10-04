@@ -1,0 +1,107 @@
+import numpy as np
+
+print("----- ARRAY CREATION -----")
+
+a = np.array([[1, 2, 3],
+              [4, 5, 6]])
+
+b = np.array([[10, 20, 30],
+              [40, 50, 60]])
+
+print("Array A:")
+print(a)
+
+print("Array B:")
+print(b)
+
+print("\n----- INDEXING -----")
+
+print("First row:", a[0])
+print("Second row:", a[1])
+print("Element at [0,1]:", a[0, 1])
+print("Element at [1,2]:", a[1, 2])
+
+print("\n----- SLICING -----")
+
+print("First row:", a[0, :])
+print("First column:", a[:, 0])
+print("First two columns:")
+print(a[:, 0:2])
+print("Sub-array:")
+print(a[0:2, 1:3])
+
+print("\n----- RESHAPING -----")
+
+c = np.arange(1, 13)
+
+print("Original Array:")
+print(c)
+
+d = c.reshape(3, 4)
+
+print("Reshaped Array:")
+print(d)
+
+print("\n----- BROADCASTING -----")
+
+x = np.array([[1, 2, 3],
+              [4, 5, 6]])
+
+y = np.array([10, 20, 30])
+
+print("Array X:")
+print(x)
+
+print("Array Y:")
+print(y)
+
+print("X + Y:")
+print(x + y)
+
+print("X * Y:")
+print(x * y)
+
+print("\n----- MATHEMATICAL OPERATIONS -----")
+
+print("A + B:")
+print(a + b)
+
+print("A - B:")
+print(a - b)
+
+print("A * B:")
+print(a * b)
+
+print("A / B:")
+print(a / b)
+
+print("A squared:")
+print(a ** 2)
+
+print("Square root of A:")
+print(np.sqrt(a))
+
+print("Sum of A:", np.sum(a))
+print("Mean of A:", np.mean(a))
+print("Maximum of A:", np.max(a))
+print("Minimum of A:", np.min(a))
+
+print("\n----- MATRIX OPERATIONS -----")
+
+m = np.array([[1, 2],
+              [3, 4]])
+
+n = np.array([[5, 6],
+              [7, 8]])
+
+print("Matrix M:")
+print(m)
+
+print("Matrix N:")
+print(n)
+
+print("Matrix Multiplication:")
+print(np.dot(m, n))
+
+print("Transpose of M:")
+print(m.T)
