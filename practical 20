@@ -1,0 +1,49 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+months = ["Jan", "Feb", "Mar", "Apr", "May"]
+sales = [50, 65, 55, 80, 95]
+
+subjects = ["Python", "CN", "WAD", "MPI", "PM"]
+marks = [85, 72, 90, 78, 88]
+
+data = [55, 60, 62, 65, 68, 70, 72, 72, 75, 78, 80, 82, 85, 88, 90]
+
+courses = ["Python", "Web Dev", "CN", "MPI"]
+students = [30, 25, 20, 15]
+
+hours = [2, 3, 4, 5, 6, 7, 8]
+scores = [50, 55, 62, 68, 74, 82, 90]
+
+fig, axes = plt.subplots(2, 3, figsize=(14, 8))
+
+fig.suptitle("Matplotlib Data Visualization", fontsize=18)
+
+axes[0, 0].plot(months, sales, marker="o")
+axes[0, 0].set_title("Line Plot")
+axes[0, 0].set_xlabel("Month")
+axes[0, 0].set_ylabel("Sales")
+axes[0, 0].grid()
+
+axes[0, 1].bar(subjects, marks)
+axes[0, 1].set_title("Bar Chart")
+axes[0, 1].set_xlabel("Subjects")
+axes[0, 1].set_ylabel("Marks")
+
+axes[0, 2].hist(data, bins=5, edgecolor="black")
+axes[0, 2].set_title("Histogram")
+axes[0, 2].set_xlabel("Marks")
+axes[0, 2].set_ylabel("Frequency")
+
+axes[1, 0].pie(students, labels=courses, autopct="%1.1f%%")
+axes[1, 0].set_title("Pie Chart")
+
+axes[1, 1].scatter(hours, scores)
+axes[1, 1].set_title("Scatter Plot")
+axes[1, 1].set_xlabel("Study Hours")
+axes[1, 1].set_ylabel("Scores")
+
+axes[1, 2].axis("off")
+
+plt.tight_layout(rect=[0, 0, 1, 0.95])
+plt.show()
