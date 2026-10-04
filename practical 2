@@ -1,0 +1,100 @@
+print("----- LIST -----")
+
+my_list = [10, 20, 30, 40, 50]
+print("Original List:", my_list)
+print("First element:", my_list[0])
+
+my_list.append(60)
+print("After append():", my_list)
+
+my_list.insert(1, 15)
+print("After insert():", my_list)
+
+my_list.remove(30)
+print("After remove():", my_list)
+
+my_list.pop()
+print("After pop():", my_list)
+
+my_list.sort()
+print("After sort():", my_list)
+
+my_list.reverse()
+print("After reverse():", my_list)
+
+
+print("\n----- TUPLE -----")
+
+my_tuple = (10, 20, 30, 20, 40)
+print("Original Tuple:", my_tuple)
+print("First element:", my_tuple[0])
+print("Count of 20:", my_tuple.count(20))
+print("Index of 30:", my_tuple.index(30))
+print("Length:", len(my_tuple))
+
+
+print("\n----- SET -----")
+
+my_set = {10, 20, 30, 40}
+print("Original Set:", my_set)
+
+my_set.add(50)
+print("After add():", my_set)
+
+my_set.update([60, 70])
+print("After update():", my_set)
+
+my_set.remove(30)
+print("After remove():", my_set)
+
+my_set.discard(100)
+print("After discard():", my_set)
+
+set2 = {40, 50, 80}
+
+print("Union:", my_set.union(set2))
+print("Intersection:", my_set.intersection(set2))
+print("Difference:", my_set.difference(set2))
+
+
+print("\n----- DICTIONARY -----")
+
+student = {
+    "name": "Pranav",
+    "age": 20,
+    "course": "BE",
+    "semester": 5
+}
+
+print("Original Dictionary:", student)
+print("Student Name:", student["name"])
+
+student["college"] = "ABC College"
+print("After adding item:", student)
+
+student["age"] = 21
+print("After updating age:", student)
+
+student.pop("semester")
+print("After pop():", student)
+
+print("Keys:", student.keys())
+print("Values:", student.values())
+print("Items:", student.items())
+print("Course:", student.get("course"))
+
+
+print("\n----- STRING -----")
+
+text = "python programming"
+print("Original String:", text)
+print("upper():", text.upper())
+print("lower():", text.lower())
+print("capitalize():", text.capitalize())
+print("replace():", text.replace("python", "Java"))
+print("find():", text.find("programming"))
+print("count('p'):", text.count("p"))
+print("startswith('python'):", text.startswith("python"))
+print("endswith('ing'):", text.endswith("ing"))
+print("split():", text.split())
+print("Length:", len(text))
