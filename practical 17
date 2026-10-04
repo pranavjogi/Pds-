@@ -1,0 +1,25 @@
+import numpy as np
+from scipy import stats
+
+data = np.array([52, 48, 51, 54, 49, 53, 50, 52, 47, 51])
+
+hypothesized_mean = 50
+alpha = 0.05
+
+t_stat, p_value = stats.ttest_1samp(data, hypothesized_mean)
+
+print("----- ONE SAMPLE T-TEST -----")
+
+print("Sample Data:", data)
+print("Sample Mean:", np.mean(data))
+print("Hypothesized Mean:", hypothesized_mean)
+print("Significance Level:", alpha)
+print("T-statistic:", t_stat)
+print("P-value:", p_value)
+
+if p_value < alpha:
+    print("Reject the Null Hypothesis")
+    print("There is a significant difference between the sample mean and hypothesized mean.")
+else:
+    print("Fail to Reject the Null Hypothesis")
+    print("There is no significant difference between the sample mean and hypothesized mean.")
