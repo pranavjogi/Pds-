@@ -1,0 +1,52 @@
+import csv
+import pickle
+
+print("----- TEXT FILE -----")
+
+with open("student.txt", "w") as file:
+    file.write("Pranav\n")
+    file.write("BE 5th Semester\n")
+
+with open("student.txt", "a") as file:
+    file.write("Web Development\n")
+
+with open("student.txt", "r") as file:
+    print(file.read())
+
+
+print("----- CSV FILE -----")
+
+with open("student.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Name", "Age", "Course"])
+    writer.writerow(["Pranav", 20, "BE"])
+    writer.writerow(["Rahul", 21, "BE"])
+
+with open("student.csv", "a", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Amit", 20, "BE"])
+
+with open("student.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+
+print("----- BINARY FILE -----")
+
+student1 = {"name": "Pranav", "age": 20}
+student2 = {"name": "Rahul", "age": 21}
+
+with open("student.dat", "wb") as file:
+    pickle.dump(student1, file)
+
+with open("student.dat", "ab") as file:
+    pickle.dump(student2, file)
+
+with open("student.dat", "rb") as file:
+    while True:
+        try:
+            data = pickle.load(file)
+            print(data)
+        except EOFError:
+            break
