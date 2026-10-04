@@ -1,0 +1,44 @@
+import statistics
+
+data = [10, 20, 20, 30, 40, 50, 60, 70, 80]
+
+data.sort()
+
+mean = statistics.mean(data)
+median = statistics.median(data)
+mode = statistics.mode(data)
+variance = statistics.variance(data)
+std_dev = statistics.stdev(data)
+data_range = max(data) - min(data)
+
+n = len(data)
+
+if n % 2 == 0:
+    lower = data[:n // 2]
+    upper = data[n // 2:]
+else:
+    lower = data[:n // 2]
+    upper = data[n // 2 + 1:]
+
+q1 = statistics.median(lower)
+q3 = statistics.median(upper)
+iqr = q3 - q1
+
+print("Dataset:", data)
+print("Mean:", mean)
+print("Median:", median)
+print("Mode:", mode)
+print("Variance:", variance)
+print("Standard Deviation:", std_dev)
+print("Range:", data_range)
+print("Q1:", q1)
+print("Q3:", q3)
+print("IQR:", iqr)
+
+print("\nInterpretation")
+print("Mean represents the average value of the dataset.")
+print("Median represents the middle value of the dataset.")
+print("Mode represents the most frequently occurring value.")
+print("Variance and standard deviation represent the spread of the data.")
+print("Range represents the difference between maximum and minimum values.")
+print("IQR represents the spread of the middle 50% of the data.")
