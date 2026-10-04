@@ -1,0 +1,102 @@
+# Demonstration of Variables and Data Types
+
+# Variables
+a = 10
+b = 5
+
+# Data Types
+num_int = 10
+num_float = 10.5
+name = "Python"
+status = True
+
+print("----- DATA TYPES -----")
+print("Integer:", num_int, type(num_int))
+print("Float:", num_float, type(num_float))
+print("String:", name, type(name))
+print("Boolean:", status, type(status))
+
+
+# 1. Arithmetic Operators
+print("\n----- ARITHMETIC OPERATORS -----")
+print("a + b =", a + b)      # Addition
+print("a - b =", a - b)      # Subtraction
+print("a * b =", a * b)      # Multiplication
+print("a / b =", a / b)      # Division
+print("a % b =", a % b)      # Modulus
+print("a ** b =", a ** b)    # Exponent
+print("a // b =", a // b)    # Floor Division
+
+
+# 2. Assignment Operators
+print("\n----- ASSIGNMENT OPERATORS -----")
+x = 10
+print("x =", x)
+
+x += 5
+print("x += 5 :", x)
+
+x -= 2
+print("x -= 2 :", x)
+
+x *= 2
+print("x *= 2 :", x)
+
+x /= 2
+print("x /= 2 :", x)
+
+x %= 4
+print("x %= 4 :", x)
+
+
+# 3. Comparison Operators
+print("\n----- COMPARISON OPERATORS -----")
+print("a == b :", a == b)    # Equal
+print("a != b :", a != b)    # Not equal
+print("a > b  :", a > b)     # Greater than
+print("a < b  :", a < b)     # Less than
+print("a >= b :", a >= b)    # Greater than or equal
+print("a <= b :", a <= b)    # Less than or equal
+
+
+# 4. Logical Operators
+print("\n----- LOGICAL OPERATORS -----")
+p = True
+q = False
+
+print("p and q :", p and q)
+print("p or q  :", p or q)
+print("not p   :", not p)
+
+
+# 5. Membership Operators
+print("\n----- MEMBERSHIP OPERATORS -----")
+text = "Python"
+
+print("'P' in text     :", 'P' in text)
+print("'z' in text     :", 'z' in text)
+print("'z' not in text :", 'z' not in text)
+
+
+# 6. Identity Operators
+print("\n----- IDENTITY OPERATORS -----")
+list1 = [1, 2, 3]
+list2 = list1
+list3 = [1, 2, 3]
+
+print("list1 is list2     :", list1 is list2)
+print("list1 is list3     :", list1 is list3)
+print("list1 is not list3 :", list1 is not list3)
+
+
+# 7. Bitwise Operators
+print("\n----- BITWISE OPERATORS -----")
+m = 10
+n = 5
+
+print("m & n  =", m & n)     # AND
+print("m | n  =", m | n)     # OR
+print("m ^ n  =", m ^ n)     # XOR
+print("~m     =", ~m)        # NOT
+print("m << 1 =", m << 1)    # Left Shift
+print("m >> 1 =", m >> 1)    # Right Shift
