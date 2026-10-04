@@ -1,0 +1,71 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("student_performance.csv")
+
+print("----- DATA SCIENCE LIFE CYCLE -----")
+print("1. Problem Definition")
+print("2. Data Collection")
+print("3. Data Cleaning")
+print("4. Exploratory Data Analysis")
+print("5. Data Visualization")
+print("6. Model Building")
+print("7. Evaluation")
+print("8. Deployment")
+
+print("\n----- DATASET -----")
+print(df)
+
+print("\n----- DATA INFORMATION -----")
+print(df.info())
+
+print("\n----- DATA CLEANING -----")
+print("Missing Values:")
+print(df.isnull().sum())
+
+df = df.dropna()
+
+print("\nCleaned Dataset:")
+print(df)
+
+print("\n----- UNIVARIATE ANALYSIS -----")
+
+print("Final Score Statistics:")
+print(df["Final_Score"].describe())
+
+print("Mean:", df["Final_Score"].mean())
+print("Median:", df["Final_Score"].median())
+print("Minimum:", df["Final_Score"].min())
+print("Maximum:", df["Final_Score"].max())
+
+plt.figure()
+plt.hist(df["Final_Score"], bins=5)
+plt.xlabel("Final Score")
+plt.ylabel("Number of Students")
+plt.title("Univariate Analysis - Final Score")
+plt.show()
+
+print("\n----- BIVARIATE ANALYSIS -----")
+
+print("Correlation between Hours Studied and Final Score:")
+print(df["Hours_Studied"].corr(df["Final_Score"]))
+
+plt.figure()
+plt.scatter(df["Hours_Studied"], df["Final_Score"])
+plt.xlabel("Hours Studied")
+plt.ylabel("Final Score")
+plt.title("Bivariate Analysis - Study Hours vs Final Score")
+plt.show()
+
+print("\n----- MULTIVARIATE ANALYSIS -----")
+
+print("Correlation Matrix:")
+print(df.corr(numeric_only=True))
+
+pd.plotting.scatter_matrix(
+    df[["Hours_Studied", "Attendance", "Previous_Score", "Final_Score"]],
+    figsize=(10, 10)
+)
+
+plt.suptitle("Multivariate Analysis")
+plt.show()
