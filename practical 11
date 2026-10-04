@@ -1,0 +1,68 @@
+import pandas as pd
+
+print("----- SERIES -----")
+
+marks = pd.Series([85, 72, 90, 68, 78], index=["A", "B", "C", "D", "E"])
+
+print("Series:")
+print(marks)
+
+print("First Element:", marks["A"])
+print("First Three Elements:")
+print(marks.iloc[:3])
+
+print("\n----- DATAFRAME -----")
+
+data = {
+    "Name": ["Pranav", "Rahul", "Amit", "Neha", "Priya"],
+    "Department": ["CE", "CE", "IT", "IT", "CE"],
+    "Marks": [85, 72, 90, 68, 78],
+    "Age": [20, 21, 20, 19, 21]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+
+print("\n----- DATA SELECTION -----")
+
+print("Name Column:")
+print(df["Name"])
+
+print("\nName and Marks:")
+print(df[["Name", "Marks"]])
+
+print("\nFirst Three Rows:")
+print(df.iloc[:3])
+
+print("\nRow 2:")
+print(df.iloc[2])
+
+print("\n----- FILTERING -----")
+
+print("Students with Marks > 75:")
+print(df[df["Marks"] > 75])
+
+print("\nStudents from CE Department:")
+print(df[df["Department"] == "CE"])
+
+print("\nStudents with Marks > 75 and Age > 20:")
+print(df[(df["Marks"] > 75) & (df["Age"] > 20)])
+
+print("\n----- GROUPING -----")
+
+group = df.groupby("Department")
+
+print("Grouped Data:")
+print(group["Marks"].mean())
+
+print("\n----- AGGREGATION -----")
+
+print("Average Marks:", df["Marks"].mean())
+print("Maximum Marks:", df["Marks"].max())
+print("Minimum Marks:", df["Marks"].min())
+print("Total Marks:", df["Marks"].sum())
+print("Number of Students:", df["Name"].count())
+
+print("\nDepartment-wise Aggregation:")
+print(df.groupby("Department")["Marks"].agg(["mean", "max", "min", "sum"]))
